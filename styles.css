@@ -1,15 +1,21 @@
 .container {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 3px;
+    /* justify-content: space-evenly; */
+    /* flex-wrap: wrap; */
     background-color: aqua;
-    width: 1000px;
+    /* width: 1000px; */
+}
+
+.column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
 .row {
     background-color: darkred;
-    flex: 1;
+    height: 25px;
+    /* flex: 1; */
 }
 
 .row-hovered {
