@@ -7,13 +7,11 @@
     width: 1000px;
 }
 
-.pixel {
+.row {
     background-color: darkred;
-    /* flex: 1; */
-    width: 5.90%;
-    height: 25px;
+    flex: 1;
 }
 
-.pixel-hovered {
+.row-hovered {
     background-color: black;
 }
