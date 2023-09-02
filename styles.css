@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 3px;
+    background-color: aqua;
+    width: 1000px;
+}
+
+.pixel {
+    background-color: darkred;
+    /* flex: 1; */
+    width: 5.90%;
+    height: 25px;
+}
+
+.pixel-hovered {
+    background-color: black;
+}
