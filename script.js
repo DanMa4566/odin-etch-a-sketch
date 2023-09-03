@@ -18,7 +18,7 @@ function changeGridSize() {
             addRowsAndColumns(oldRowsAndColumns, rowsAndColumns);
             break;
         } else {
-            alert("The value cannot be higher than 100, be negative or a random word")
+            alert("The value cannot be higher than 100, be negative, a random word or 0")
         }
     }
 }
