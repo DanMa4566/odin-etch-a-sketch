@@ -1,5 +1,7 @@
 const etchASketch = document.querySelector(".container")
 const button = document.querySelector("#change")
+const rainbow = document.querySelector("#rainbow")
+
 let rowsAndColumns = 0
 let oldRowsAndColumns = 0
 
@@ -50,4 +52,4 @@ function addRowsAndColumns(oldRowAndColumn, rowAndColumn) {
     }
 }
 
-changeGridSize()
+addRowsAndColumns(0, 16);
