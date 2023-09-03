@@ -37,7 +37,6 @@ function addRowsAndColumns(oldRowAndColumn, rowAndColumn) {
                 row.classList.add("row-hovered")
             })
 
-            row.textContent = "A"
             column.appendChild(row)
         }
         
