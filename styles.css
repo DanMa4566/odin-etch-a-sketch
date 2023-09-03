@@ -14,8 +14,19 @@ body {
     background-color: #eee;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 button {
+    padding: 10px;
     margin: 20px;
+    border: 2px solid black;
+}
+
+.active {
+    background-color: rgb(0, 255, 0);
 }
 
 .container {
@@ -40,4 +51,32 @@ button {
 
 .row-hovered {
     background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.lightblue {
+    background-color: lightblue;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
 }
