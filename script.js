@@ -5,10 +5,10 @@ let oldRowsAndColumns = 0
 
 function changeGridSize() {
     while (true) {
-        oldRowsAndColumns = rowsAndColumns
         rowsAndColumns = Number(prompt("How many squares do you want in each row and column, the value cannot be higher than 100"))
 
         if (rowsAndColumns <= 100 && rowsAndColumns > 0) {
+            oldRowsAndColumns = rowsAndColumns
             addRowsAndColumns(oldRowsAndColumns, rowsAndColumns);
             break;
         } else {
