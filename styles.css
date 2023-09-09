@@ -53,6 +53,8 @@ button {
     background-color: black;
 }
 
+/* rainbow mode */
+
 .red {
     background-color: red;
 }
@@ -79,4 +81,48 @@ button {
 
 .purple {
     background-color: purple;
+}
+
+/* darkening mode */
+
+
+.d90 {
+    background-color: hsl(0, 0%, 90%)
+}
+
+.d80 {
+    background-color: hsl(0, 0%, 80%)
+}
+
+.d70 {
+    background-color: hsl(0, 0%, 70%)
+}
+
+
+.d60 {
+    background-color: hsl(0, 0%, 60%)
+}
+
+.d50 {
+    background-color: hsl(0, 0%, 50%)   
+}
+
+.d40 {
+    background-color: hsl(0, 0%, 40%)
+}
+
+.d30 {
+    background-color: hsl(0, 0%, 30%)
+}
+
+.d20 {
+    background-color: hsl(0, 0%, 20%)
+}
+
+.d10 {
+    background-color: hsl(0, 0%, 10%)
+}
+
+.d0 {
+    background-color: hsl(0, 0%, 0%)
 }
