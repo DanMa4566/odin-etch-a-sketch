@@ -2,11 +2,14 @@ const etchASketch = document.querySelector(".container")
 const button = document.querySelector("#change")
 button.addEventListener("click", changeGridSize)
 const rainbow = document.querySelector("#rainbow")
-rainbow.addEventListener("click", toggleRainbow)
+rainbow.addEventListener("click", toggleModes)
+const dark = document.querySelector("#darkening")
+dark.addEventListener("click", toggleModes)
 
 let rowsAndColumns = 16
 let oldRowsAndColumns = 1
 let rainbowToggle = false
+let darkeningToggle = false
 
 function changeGridSize() {
     while (true) {
@@ -29,17 +32,39 @@ function changeGridSize() {
     }
 }
 
-function toggleRainbow() {
-    if (rainbowToggle) {
-        rainbow.classList.remove("active")
-        rainbowToggle = false
-        addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle)
-    } else {
-        rainbow.classList.add("active")
-        rainbowToggle = true
-        addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle)
+function toggleModes(e) {
+
+    if (e.target.id === "rainbow") {
+
+        if (rainbowToggle) {
+            rainbow.classList.remove("active")
+            rainbowToggle = false
+        } else {
+            rainbow.classList.add("active")
+            dark.classList.remove("active")
+
+            rainbowToggle = true
+            darkeningToggle = false
+        }
+
+    } else if (e.target.id === "darkening") {
+
+        if (darkeningToggle) {
+            dark.classList.remove("active")
+            darkeningToggle = false
+        } else {
+            dark.classList.add("active")
+            rainbow.classList.remove("active")
+
+            darkeningToggle = true
+            rainbowToggle = false
+        }
     }
+
+    addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle, darkeningToggle)
 }
+
+// function 
 
 function rainbowMode(row) {
     let color = Math.floor(Math.random() * 7)
@@ -75,6 +100,8 @@ function rainbowMode(row) {
             break;
     }
 }
+
+
 
 function addRowsAndColumns(oldRowAndColumn, rowAndColumn, rainbowM) {
 
