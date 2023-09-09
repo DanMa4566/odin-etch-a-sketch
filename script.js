@@ -5,6 +5,8 @@ const rainbow = document.querySelector("#rainbow")
 rainbow.addEventListener("click", toggleModes)
 const dark = document.querySelector("#darkening")
 dark.addEventListener("click", toggleModes)
+const clear = document.querySelector("#clear")
+clear.addEventListener("click", clearCanvas)
 
 let rowsAndColumns = 16
 let oldRowsAndColumns = 1
@@ -30,6 +32,10 @@ function changeGridSize() {
             alert("The value cannot be higher than 100, be negative, a random word or 0")
         }
     }
+}
+
+function clearCanvas() {
+    addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle, darkeningToggle)
 }
 
 function toggleModes(e) {
@@ -99,7 +105,6 @@ function rainbowMode(row) {
 }
 
 function darkeningMode(row) {
-    console.log(row.classList)
     let lastAddedClass = row.classList[row.classList.length - 1]
 
     switch (lastAddedClass) {
