@@ -24,7 +24,7 @@ function changeGridSize() {
 
         if (rowsAndColumns <= 100 && rowsAndColumns > 0) {
             oldRowsAndColumns = rowsAndColumns
-            addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle);
+            addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle, darkeningToggle);
             break;
         } else {
             alert("The value cannot be higher than 100, be negative, a random word or 0")
@@ -64,11 +64,8 @@ function toggleModes(e) {
     addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle, darkeningToggle)
 }
 
-// function 
-
 function rainbowMode(row) {
     let color = Math.floor(Math.random() * 7)
-
     // deletes classes from the divs, otherwise color that were defined later on the css will take priority over earlier ones
     // in the end purple can overwrite any other color when you hover over already 'painted' divs
     while (row.classList.length > 0) {
@@ -101,9 +98,45 @@ function rainbowMode(row) {
     }
 }
 
+function darkeningMode(row) {
+    console.log(row.classList)
+    let lastAddedClass = row.classList[row.classList.length - 1]
 
+    switch (lastAddedClass) {
+        case "row":
+            row.classList.add("d90")
+            break;
+        case "d90":
+            row.classList.add("d80")
+            break;
+        case "d80":
+            row.classList.add("d70")
+            break;
+        case "d70":
+            row.classList.add("d60")
+            break;
+        case "d60":
+            row.classList.add("d50")
+            break;
+        case "d50":
+            row.classList.add("d40")
+            break;
+        case "d40":
+            row.classList.add("d30")
+            break;
+        case "d30":
+            row.classList.add("d20")
+            break;
+        case "d20":
+            row.classList.add("d10")
+            break;
+        case "d10":
+            row.classList.add("d0")
+            break;
+    }
+}
 
-function addRowsAndColumns(oldRowAndColumn, rowAndColumn, rainbowM) {
+function addRowsAndColumns(oldRowAndColumn, rowAndColumn, rainbowM, darkeningM) {
 
     if (oldRowAndColumn) {
         etchASketch.innerHTML = ""
@@ -120,6 +153,8 @@ function addRowsAndColumns(oldRowAndColumn, rowAndColumn, rainbowM) {
             row.addEventListener("mouseover", () => {
                 if (rainbowM) {
                     rainbowMode(row)
+                } else if (darkeningM){
+                    darkeningMode(row)
                 } else {
                     row.classList.add("row-hovered")
                 }
@@ -132,4 +167,4 @@ function addRowsAndColumns(oldRowAndColumn, rowAndColumn, rainbowM) {
     }
 }
 
-addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle);
+addRowsAndColumns(oldRowsAndColumns, rowsAndColumns, rainbowToggle, darkeningToggle);
